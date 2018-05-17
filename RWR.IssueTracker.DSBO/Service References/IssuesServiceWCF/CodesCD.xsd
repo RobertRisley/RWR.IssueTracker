@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:mstns="http://www.RobertRisley.com/CodesCD.xsd" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns="http://www.RobertRisley.com/CodesCD.xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://www.RobertRisley.com/CodesCD.xsd" id="CodesCD" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element msdata:IsDataSet="true" msdata:UseCurrentLocale="true" name="CodesCD">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="PriorityTypes">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="PriorityTypeCd" type="xs:short" />
+              <xs:element name="ShortDescription">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="12" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Projects">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ProjectLookupCd" type="xs:short" />
+              <xs:element name="ShortDescription">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="UIStatusTypes">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="StatusTypeCd" type="xs:short" />
+              <xs:element name="ShortDescription">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="12" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique msdata:PrimaryKey="true" name="Constraint1">
+      <xs:selector xpath=".//mstns:PriorityTypes" />
+      <xs:field xpath="mstns:PriorityTypeCd" />
+    </xs:unique>
+    <xs:unique msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true" name="Projects_Constraint1">
+      <xs:selector xpath=".//mstns:Projects" />
+      <xs:field xpath="mstns:ProjectLookupCd" />
+    </xs:unique>
+    <xs:unique msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true" name="UIStatusTypes_Constraint1">
+      <xs:selector xpath=".//mstns:UIStatusTypes" />
+      <xs:field xpath="mstns:StatusTypeCd" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://www.RobertRisley.com/2010" elementFormDefault="qualified" targetNamespace="http://www.RobertRisley.com/2010" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost/IssuesService?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/RWR.MessageContracts.Issues" />
+  <xs:element name="GetIssues">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/RWR.MessageContracts.Issues" minOccurs="0" name="request" nillable="true" type="q1:GetIssuesRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIssuesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/RWR.MessageContracts.Issues" minOccurs="0" name="GetIssuesResult" nillable="true" type="q2:GetIssuesResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="UnspecifiedFault">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="UnspecifiedMessage" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UnspecifiedFault" nillable="true" type="tns:UnspecifiedFault" />
+  <xs:element name="UpdateIssues">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/RWR.MessageContracts.Issues" minOccurs="0" name="request" nillable="true" type="q3:UpdateIssuesRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateIssuesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/RWR.MessageContracts.Issues" minOccurs="0" name="UpdateIssuesResult" nillable="true" type="q4:UpdateIssuesResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPriorityTypeCodes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/RWR.MessageContracts.Issues" minOccurs="0" name="request" nillable="true" type="q5:GetPriorityTypeCodesRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPriorityTypeCodesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/RWR.MessageContracts.Issues" minOccurs="0" name="GetPriorityTypeCodesResult" nillable="true" type="q6:GetPriorityTypeCodesResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Ping">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="PingResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

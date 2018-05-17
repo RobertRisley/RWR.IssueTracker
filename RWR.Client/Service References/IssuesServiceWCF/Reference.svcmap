@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="a41acf25-f08b-4a3f-9ffd-4a5530923608" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost/IssuesService" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="IssuesService2.xsd" MetadataType="Schema" ID="6ecd869c-a0d4-4ca3-9b65-24247f7a42fe" SourceId="1" SourceUrl="http://localhost/IssuesService?xsd=xsd2" />
+    <MetadataFile FileName="IssuesService3.xsd" MetadataType="Schema" ID="bf239efa-ca7f-46a4-848b-b2ca23c01dd7" SourceId="1" SourceUrl="http://localhost/IssuesService?xsd=xsd1" />
+    <MetadataFile FileName="IssuesService.wsdl" MetadataType="Wsdl" ID="c030e0d7-697b-4418-a906-47ed41bf0767" SourceId="1" SourceUrl="http://localhost/IssuesService?wsdl=wsdl0" />
+    <MetadataFile FileName="IssuesService1.xsd" MetadataType="Schema" ID="3562719a-a47a-4cb2-a1ac-7af85e9b843b" SourceId="1" SourceUrl="http://localhost/IssuesService?xsd=xsd3" />
+    <MetadataFile FileName="CodesCD.xsd" MetadataType="Schema" ID="355fd77a-f80a-4a4f-a367-f57c669c4614" SourceId="1" SourceUrl="http://localhost/IssuesService?xsd=xsd6" />
+    <MetadataFile FileName="IssuesServiceWCF.wsdl" MetadataType="Wsdl" ID="525e40b1-0a44-4114-9e9c-aecdd3903fab" SourceId="1" SourceUrl="http://localhost/IssuesService?wsdl" />
+    <MetadataFile FileName="IssuesCD.xsd" MetadataType="Schema" ID="a1fed397-ad57-4c51-8200-10c751f0b0cf" SourceId="1" SourceUrl="http://localhost/IssuesService?xsd=xsd4" />
+    <MetadataFile FileName="IssuesService.disco" MetadataType="Disco" ID="25d86dd6-6919-46ff-a248-a034164f9eac" SourceId="1" SourceUrl="http://localhost/IssuesService?disco" />
+    <MetadataFile FileName="IssuesService4.xsd" MetadataType="Schema" ID="7fda8378-5082-4ea2-be54-634c6e9fa235" SourceId="1" SourceUrl="http://localhost/IssuesService?xsd=xsd5" />
+    <MetadataFile FileName="IssuesService.xsd" MetadataType="Schema" ID="6580b66e-be03-4eb3-9db7-659373934ea9" SourceId="1" SourceUrl="http://localhost/IssuesService?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

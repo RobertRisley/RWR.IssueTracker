@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="IssuesCD" targetNamespace="http://www.RobertRisley.com/IssuesCD.xsd" xmlns:mstns="http://www.RobertRisley.com/IssuesCD.xsd" xmlns="http://www.RobertRisley.com/IssuesCD.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="StudioConnectionString" ConnectionStringObject="" IsAppSettingsProperty="True" Modifier="Assembly" Name="StudioConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.RWR.IssueTracker.DSBO.Properties.Settings.GlobalReference.Default.StudioConnectionString" Provider="System.Data.SqlClient">
+          </Connection>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="StudioConnectionString1" IsAppSettingsProperty="True" Modifier="Assembly" Name="StudioConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.RWR.IssueTracker.DSBO.Properties.Settings.GlobalReference.Default.StudioConnectionString1" Provider="System.Data.SqlClient">
+          </Connection>
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="IssuesTableAdapter" GeneratorDataComponentClassName="IssuesTableAdapter" Name="Issues" UserDataComponentName="IssuesTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="StudioConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="False" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="False" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="True">
+                    <CommandText>SELECT     Task.TaskId, Task.SubmitDt, Task.Component, Task.ShortDescription, Task.LongDescription, Task.DueDt, Task.Version, Task.StartDt, Task.ClosedDt, 
+                      Task.Resolution, Task.QAApprovedBy, Task.BusinessApprovedBy, Task.PrioritySequence, StatusTypeLookup.ShortDescription AS Status, 
+                      TAA.Name AS AssignedToName, TAA.Initials AS AssignedTo, Task.PriorityTypeCd, PriorityTypeLookup.ShortDescription AS Priority, 
+                      ProjectLookup.ShortDescription AS Project, TAB.Name AS ApprovedByName, Task.SubmittedBy
+FROM         Task LEFT OUTER JOIN
+                      Developer AS TAB ON Task.ApprovedBy = TAB.Initials LEFT OUTER JOIN
+                      TaskResource ON Task.TaskId = TaskResource.TaskId LEFT OUTER JOIN
+                      Developer AS TAA ON TAA.Initials = TaskResource.Developer LEFT OUTER JOIN
+                      ProjectLookup ON Task.ProjectLookupCd = ProjectLookup.ProjectLookupCd LEFT OUTER JOIN
+                      PriorityTypeLookup ON Task.PriorityTypeCd = PriorityTypeLookup.PriorityTypeCd LEFT OUTER JOIN
+                      StatusTypeLookup ON Task.StatusTypeCd = StatusTypeLookup.StatusTypeCd
+WHERE     (ProjectLookup.ShortDescription = 'CRF-Backshop') AND (TAA.Initials IS NULL OR
+                      TAA.Initials =
+                          (SELECT     TOP (1) Developer
+                            FROM          TaskResource AS x
+                            WHERE      (TaskId = TaskResource.TaskId)))
+ORDER BY Task.TaskId</CommandText>
+                    <Parameters>
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="TaskId" DataSetColumn="TaskId" />
+              <Mapping SourceColumn="SubmitDt" DataSetColumn="SubmitDt" />
+              <Mapping SourceColumn="Component" DataSetColumn="Component" />
+              <Mapping SourceColumn="ShortDescription" DataSetColumn="ShortDescription" />
+              <Mapping SourceColumn="LongDescription" DataSetColumn="LongDescription" />
+              <Mapping SourceColumn="DueDt" DataSetColumn="DueDt" />
+              <Mapping SourceColumn="Version" DataSetColumn="Version" />
+              <Mapping SourceColumn="StartDt" DataSetColumn="StartDt" />
+              <Mapping SourceColumn="ClosedDt" DataSetColumn="ClosedDt" />
+              <Mapping SourceColumn="Resolution" DataSetColumn="Resolution" />
+              <Mapping SourceColumn="QAApprovedBy" DataSetColumn="QAApprovedBy" />
+              <Mapping SourceColumn="BusinessApprovedBy" DataSetColumn="BusinessApprovedBy" />
+              <Mapping SourceColumn="PrioritySequence" DataSetColumn="PrioritySequence" />
+              <Mapping SourceColumn="Status" DataSetColumn="Status" />
+              <Mapping SourceColumn="AssignedToName" DataSetColumn="AssignedToName" />
+              <Mapping SourceColumn="AssignedTo" DataSetColumn="AssignedTo" />
+              <Mapping SourceColumn="PriorityTypeCd" DataSetColumn="PriorityTypeCd" />
+              <Mapping SourceColumn="Priority" DataSetColumn="Priority" />
+              <Mapping SourceColumn="Project" DataSetColumn="Project" />
+              <Mapping SourceColumn="ApprovedByName" DataSetColumn="ApprovedByName" />
+              <Mapping SourceColumn="SubmittedBy" DataSetColumn="SubmittedBy" />
+            </Mappings>
+            <Sources>
+            </Sources>
+          </TableAdapter>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="IssuesCD" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="IssuesCD" msprop:Generator_DataSetName="IssuesCD">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Issues" msprop:Generator_UserTableName="Issues" msprop:Generator_RowDeletedName="IssuesRowDeleted" msprop:Generator_RowChangedName="IssuesRowChanged" msprop:Generator_RowClassName="IssuesRow" msprop:Generator_RowChangingName="IssuesRowChanging" msprop:Generator_RowEvArgName="IssuesRowChangeEvent" msprop:Generator_RowEvHandlerName="IssuesRowChangeEventHandler" msprop:Generator_TableClassName="IssuesDataTable" msprop:Generator_TableVarName="tableIssues" msprop:Generator_RowDeletingName="IssuesRowDeleting" msprop:Generator_TablePropName="Issues">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TaskId" msprop:Generator_UserColumnName="TaskId" msprop:Generator_ColumnVarNameInTable="columnTaskId" msprop:Generator_ColumnPropNameInRow="TaskId" msprop:Generator_ColumnPropNameInTable="TaskIdColumn" type="xs:int" default="0" />
+              <xs:element name="SubmitDt" msprop:Generator_UserColumnName="SubmitDt" msprop:Generator_ColumnVarNameInTable="columnSubmitDt" msprop:Generator_ColumnPropNameInRow="SubmitDt" msprop:Generator_ColumnPropNameInTable="SubmitDtColumn" type="xs:dateTime" default="2007-01-01T00:00:00-08:00" />
+              <xs:element name="Component" msprop:Generator_UserColumnName="Component" msprop:Generator_ColumnVarNameInTable="columnComponent" msprop:Generator_ColumnPropNameInRow="Component" msprop:Generator_ColumnPropNameInTable="ComponentColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ShortDescription" msprop:Generator_UserColumnName="ShortDescription" msprop:Generator_ColumnVarNameInTable="columnShortDescription" msprop:Generator_ColumnPropNameInRow="ShortDescription" msprop:Generator_ColumnPropNameInTable="ShortDescriptionColumn" default="Default Description">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LongDescription" msprop:Generator_UserColumnName="LongDescription" msprop:Generator_ColumnVarNameInTable="columnLongDescription" msprop:Generator_ColumnPropNameInRow="LongDescription" msprop:Generator_ColumnPropNameInTable="LongDescriptionColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1073741823" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DueDt" msprop:Generator_UserColumnName="DueDt" msprop:Generator_ColumnVarNameInTable="columnDueDt" msprop:Generator_ColumnPropNameInRow="DueDt" msprop:Generator_ColumnPropNameInTable="DueDtColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Version" msprop:Generator_UserColumnName="Version" msprop:Generator_ColumnVarNameInTable="columnVersion" msprop:Generator_ColumnPropNameInRow="Version" msprop:Generator_ColumnPropNameInTable="VersionColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="StartDt" msprop:Generator_UserColumnName="StartDt" msprop:Generator_ColumnVarNameInTable="columnStartDt" msprop:Generator_ColumnPropNameInRow="StartDt" msprop:Generator_ColumnPropNameInTable="StartDtColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ClosedDt" msprop:Generator_UserColumnName="ClosedDt" msprop:Generator_ColumnVarNameInTable="columnClosedDt" msprop:Generator_ColumnPropNameInRow="ClosedDt" msprop:Generator_ColumnPropNameInTable="ClosedDtColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Resolution" msprop:Generator_UserColumnName="Resolution" msprop:Generator_ColumnVarNameInTable="columnResolution" msprop:Generator_ColumnPropNameInRow="Resolution" msprop:Generator_ColumnPropNameInTable="ResolutionColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="QAApprovedBy" msprop:Generator_UserColumnName="QAApprovedBy" msprop:Generator_ColumnVarNameInTable="columnQAApprovedBy" msprop:Generator_ColumnPropNameInRow="QAApprovedBy" msprop:Generator_ColumnPropNameInTable="QAApprovedByColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BusinessApprovedBy" msprop:Generator_UserColumnName="BusinessApprovedBy" msprop:Generator_ColumnVarNameInTable="columnBusinessApprovedBy" msprop:Generator_ColumnPropNameInRow="BusinessApprovedBy" msprop:Generator_ColumnPropNameInTable="BusinessApprovedByColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PrioritySequence" msprop:Generator_UserColumnName="PrioritySequence" msprop:Generator_ColumnVarNameInTable="columnPrioritySequence" msprop:Generator_ColumnPropNameInRow="PrioritySequence" msprop:Generator_ColumnPropNameInTable="PrioritySequenceColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="Status" msprop:Generator_UserColumnName="Status" msprop:Generator_ColumnVarNameInTable="columnStatus" msprop:Generator_ColumnPropNameInRow="Status" msprop:Generator_ColumnPropNameInTable="StatusColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="12" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AssignedToName" msdata:Caption="Assigned To" msprop:Generator_UserColumnName="AssignedToName" msprop:Generator_ColumnVarNameInTable="columnAssignedToName" msprop:Generator_ColumnPropNameInRow="AssignedToName" msprop:Generator_ColumnPropNameInTable="AssignedToNameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AssignedTo" msprop:Generator_UserColumnName="AssignedTo" msprop:Generator_ColumnVarNameInTable="columnAssignedTo" msprop:Generator_ColumnPropNameInRow="AssignedTo" msprop:Generator_ColumnPropNameInTable="AssignedToColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PriorityTypeCd" msprop:Generator_UserColumnName="PriorityTypeCd" msprop:Generator_ColumnVarNameInTable="columnPriorityTypeCd" msprop:Generator_ColumnPropNameInRow="PriorityTypeCd" msprop:Generator_ColumnPropNameInTable="PriorityTypeCdColumn" type="xs:short" default="1" />
+              <xs:element name="Priority" msprop:Generator_UserColumnName="Priority" msprop:Generator_ColumnVarNameInTable="columnPriority" msprop:Generator_ColumnPropNameInRow="Priority" msprop:Generator_ColumnPropNameInTable="PriorityColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="12" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Project" msprop:Generator_UserColumnName="Project" msprop:Generator_ColumnVarNameInTable="columnProject" msprop:Generator_ColumnPropNameInRow="Project" msprop:Generator_ColumnPropNameInTable="ProjectColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ApprovedByName" msprop:Generator_UserColumnName="ApprovedByName" msprop:Generator_ColumnVarNameInTable="columnApprovedByName" msprop:Generator_ColumnPropNameInRow="ApprovedByName" msprop:Generator_ColumnPropNameInTable="ApprovedByNameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SubmittedBy" msprop:Generator_UserColumnName="SubmittedBy" msprop:Generator_ColumnVarNameInTable="columnSubmittedBy" msprop:Generator_ColumnPropNameInRow="SubmittedBy" msprop:Generator_ColumnPropNameInTable="SubmittedByColumn" default="Default User">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Issues" />
+      <xs:field xpath="mstns:TaskId" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

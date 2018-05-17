@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/RWR.MessageContracts.Issues" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/RWR.MessageContracts.Issues" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost/IssuesService?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/RWR.MessageContracts" />
+  <xs:complexType name="GetIssuesRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/RWR.MessageContracts" base="q1:BaseRequest">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetIssuesRequest" nillable="true" type="tns:GetIssuesRequest" />
+  <xs:complexType name="GetIssuesResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/RWR.MessageContracts" base="q2:BaseResponse">
+        <xs:sequence>
+          <xs:element name="IssuesCD" nillable="true">
+            <xs:complexType>
+              <xs:annotation>
+                <xs:appinfo>
+                  <ActualType Name="IssuesCD" Namespace="http://schemas.datacontract.org/2004/07/RWR.IssueTracker.DSBO" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+                </xs:appinfo>
+              </xs:annotation>
+              <xs:sequence>
+                <xs:any namespace="http://www.RobertRisley.com/IssuesCD.xsd" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetIssuesResponse" nillable="true" type="tns:GetIssuesResponse" />
+  <xs:complexType name="UpdateIssuesRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/RWR.MessageContracts" base="q3:BaseRequest">
+        <xs:sequence>
+          <xs:element name="IssuesCD" nillable="true">
+            <xs:complexType>
+              <xs:annotation>
+                <xs:appinfo>
+                  <ActualType Name="IssuesCD" Namespace="http://schemas.datacontract.org/2004/07/RWR.IssueTracker.DSBO" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+                </xs:appinfo>
+              </xs:annotation>
+              <xs:sequence>
+                <xs:any namespace="http://www.RobertRisley.com/IssuesCD.xsd" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UpdateIssuesRequest" nillable="true" type="tns:UpdateIssuesRequest" />
+  <xs:complexType name="UpdateIssuesResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q4="http://schemas.datacontract.org/2004/07/RWR.MessageContracts" base="q4:BaseResponse">
+        <xs:sequence>
+          <xs:element name="IssuesCD" nillable="true">
+            <xs:complexType>
+              <xs:annotation>
+                <xs:appinfo>
+                  <ActualType Name="IssuesCD" Namespace="http://schemas.datacontract.org/2004/07/RWR.IssueTracker.DSBO" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+                </xs:appinfo>
+              </xs:annotation>
+              <xs:sequence>
+                <xs:any namespace="http://www.RobertRisley.com/IssuesCD.xsd" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UpdateIssuesResponse" nillable="true" type="tns:UpdateIssuesResponse" />
+  <xs:complexType name="GetPriorityTypeCodesRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q5="http://schemas.datacontract.org/2004/07/RWR.MessageContracts" base="q5:BaseRequest">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetPriorityTypeCodesRequest" nillable="true" type="tns:GetPriorityTypeCodesRequest" />
+  <xs:complexType name="GetPriorityTypeCodesResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q6="http://schemas.datacontract.org/2004/07/RWR.MessageContracts" base="q6:BaseResponse">
+        <xs:sequence>
+          <xs:element name="CodesCD" nillable="true">
+            <xs:complexType>
+              <xs:annotation>
+                <xs:appinfo>
+                  <ActualType Name="CodesCD" Namespace="http://schemas.datacontract.org/2004/07/RWR.IssueTracker.DSBO" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+                </xs:appinfo>
+              </xs:annotation>
+              <xs:sequence>
+                <xs:any namespace="http://www.RobertRisley.com/CodesCD.xsd" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetPriorityTypeCodesResponse" nillable="true" type="tns:GetPriorityTypeCodesResponse" />
+</xs:schema>

@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RWR.IssueTracker.DSBO", "RWR.IssueTracker.DSBO.csproj", "{24EE0A59-2AD8-4267-BECB-A1714102A89D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RWR.IssueTracker.DSBO.Tests", "..\RWR.IssueTracker.DSBO.Tests\RWR.IssueTracker.DSBO.Tests.csproj", "{EF672CA7-3593-4C8F-A425-4EAA8A974528}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RWR.Common", "..\RWR.Common\RWR.Common.csproj", "{13391A55-7D98-448F-959B-DA89338C34A3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{24EE0A59-2AD8-4267-BECB-A1714102A89D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24EE0A59-2AD8-4267-BECB-A1714102A89D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24EE0A59-2AD8-4267-BECB-A1714102A89D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24EE0A59-2AD8-4267-BECB-A1714102A89D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF672CA7-3593-4C8F-A425-4EAA8A974528}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF672CA7-3593-4C8F-A425-4EAA8A974528}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF672CA7-3593-4C8F-A425-4EAA8A974528}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF672CA7-3593-4C8F-A425-4EAA8A974528}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13391A55-7D98-448F-959B-DA89338C34A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13391A55-7D98-448F-959B-DA89338C34A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13391A55-7D98-448F-959B-DA89338C34A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13391A55-7D98-448F-959B-DA89338C34A3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

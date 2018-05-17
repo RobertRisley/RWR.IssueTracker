@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.RobertRisley.com/2010" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.RobertRisley.com/2010" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Manages the Issue Tracker Data</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.RobertRisley.com/2010">
+      <s:import namespace="http://www.RobertRisley.com/IssuesCD.xsd" />
+      <s:import namespace="http://www.RobertRisley.com/CodesCD.xsd" />
+      <s:import schemaLocation="http://localhost:63078/RWR.Web.Services/IssuesASMX.asmx?schema=CodesCD" namespace="http://www.RobertRisley.com/CodesCD.xsd" />
+      <s:import schemaLocation="http://localhost:63078/RWR.Web.Services/IssuesASMX.asmx?schema=IssuesCD" namespace="http://www.RobertRisley.com/IssuesCD.xsd" />
+      <s:element name="GetIssues">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetIssuesRQ" type="tns:GetIssuesRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetIssuesRequest">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:BaseRequest" />
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="BaseRequest">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ClientTransactionId" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetIssuesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetIssuesRS" type="tns:GetIssuesResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetIssuesResponse">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:BaseResponse">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="IssuesCD">
+                <s:complexType>
+                  <s:sequence>
+                    <s:any namespace="http://www.RobertRisley.com/IssuesCD.xsd" />
+                  </s:sequence>
+                </s:complexType>
+              </s:element>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="BaseResponse" />
+      <s:element name="UpdateIssues">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateIssuesRQ" type="tns:UpdateIssuesRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UpdateIssuesRequest">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:BaseRequest">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="IssuesCD">
+                <s:complexType>
+                  <s:sequence>
+                    <s:any namespace="http://www.RobertRisley.com/IssuesCD.xsd" />
+                  </s:sequence>
+                </s:complexType>
+              </s:element>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="UpdateIssuesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateIssuesRS" type="tns:UpdateIssuesResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UpdateIssuesResponse">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:BaseResponse">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="IssuesCD">
+                <s:complexType>
+                  <s:sequence>
+                    <s:any namespace="http://www.RobertRisley.com/IssuesCD.xsd" />
+                  </s:sequence>
+                </s:complexType>
+              </s:element>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="GetPriorityTypeCodes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPriorityTypeCodesRQ" type="tns:GetPriorityTypeCodesRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetPriorityTypeCodesRequest">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:BaseRequest" />
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="GetPriorityTypeCodesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPriorityTypeCodesRS" type="tns:GetPriorityTypeCodesResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetPriorityTypeCodesResponse">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:BaseResponse">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="CodesCD">
+                <s:complexType>
+                  <s:sequence>
+                    <s:any namespace="http://www.RobertRisley.com/CodesCD.xsd" />
+                  </s:sequence>
+                </s:complexType>
+              </s:element>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="Ping">
+        <s:complexType />
+      </s:element>
+      <s:element name="PingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PingResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetIssuesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetIssues" />
+  </wsdl:message>
+  <wsdl:message name="GetIssuesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetIssuesResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateIssuesSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateIssues" />
+  </wsdl:message>
+  <wsdl:message name="UpdateIssuesSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateIssuesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPriorityTypeCodesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPriorityTypeCodes" />
+  </wsdl:message>
+  <wsdl:message name="GetPriorityTypeCodesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPriorityTypeCodesResponse" />
+  </wsdl:message>
+  <wsdl:message name="PingSoapIn">
+    <wsdl:part name="parameters" element="tns:Ping" />
+  </wsdl:message>
+  <wsdl:message name="PingSoapOut">
+    <wsdl:part name="parameters" element="tns:PingResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IssuesContract">
+    <wsdl:operation name="GetIssues">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get Issues</wsdl:documentation>
+      <wsdl:input message="tns:GetIssuesSoapIn" />
+      <wsdl:output message="tns:GetIssuesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateIssues">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Update Issues</wsdl:documentation>
+      <wsdl:input message="tns:UpdateIssuesSoapIn" />
+      <wsdl:output message="tns:UpdateIssuesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPriorityTypeCodes">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get Priority Type Codes</wsdl:documentation>
+      <wsdl:input message="tns:GetPriorityTypeCodesSoapIn" />
+      <wsdl:output message="tns:GetPriorityTypeCodesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Ping">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Ping</wsdl:documentation>
+      <wsdl:input message="tns:PingSoapIn" />
+      <wsdl:output message="tns:PingSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="IssuesContract" type="tns:IssuesContract">
+    <wsdl:documentation>
+      <wsi:Claim conformsTo="http://ws-i.org/profiles/basic/1.1" xmlns:wsi="http://ws-i.org/schemas/conformanceClaim/" />
+    </wsdl:documentation>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetIssues">
+      <soap:operation soapAction="http://www.RobertRisley.com/2010/GetIssues" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateIssues">
+      <soap:operation soapAction="http://www.RobertRisley.com/2010/UpdateIssues" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPriorityTypeCodes">
+      <soap:operation soapAction="http://www.RobertRisley.com/2010/GetPriorityTypeCodes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Ping">
+      <soap:operation soapAction="http://www.RobertRisley.com/2010/Ping" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="IssuesContract1" type="tns:IssuesContract">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetIssues">
+      <soap12:operation soapAction="http://www.RobertRisley.com/2010/GetIssues" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateIssues">
+      <soap12:operation soapAction="http://www.RobertRisley.com/2010/UpdateIssues" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPriorityTypeCodes">
+      <soap12:operation soapAction="http://www.RobertRisley.com/2010/GetPriorityTypeCodes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Ping">
+      <soap12:operation soapAction="http://www.RobertRisley.com/2010/Ping" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="IssuesServiceASMX">
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Manages the Issue Tracker Data</wsdl:documentation>
+    <wsdl:port name="IssuesContract" binding="tns:IssuesContract">
+      <soap:address location="http://localhost:63078/RWR.Web.Services/IssuesASMX.asmx" />
+    </wsdl:port>
+    <wsdl:port name="IssuesContract1" binding="tns:IssuesContract1">
+      <soap12:address location="http://localhost:63078/RWR.Web.Services/IssuesASMX.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
